@@ -1,0 +1,16 @@
+# dependencies
+node_modules/
+
+# engine output — these are working files, not source
+data/state/
+data/log/
+data/queue/
+data/cv/
+
+# env files
+.env
+.env*.local
+
+# misc
+.DS_Store
+npm-debug.log*

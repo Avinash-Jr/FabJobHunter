@@ -1,0 +1,57 @@
+﻿"use client";
+
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import ReactMarkdown from "react-markdown";
+import { FileText } from "lucide-react";
+import { useSnapshot } from "@/components/live-provider";
+import { type Job } from "@/lib/use-live";
+import { PageHeader } from "@/components/page-header";
+import { GradeChip } from "@/components/grade-chip";
+
+export default function ResumesPage() {
+  const snap = useSnapshot();
+  const params = useSearchParams();
+
+  const jobs: Job[] = snap.jobs ?? [];
+  const tailored = jobs.filter((j) => j.hasCv ?? j.cvReady);
+
+  const [selected, setSelected] = useState<string>("base");
+  const [markdown, setMarkdown] = useState<string>("");
+  const [loading, setLoading] = useState(false);
+
+  // Read ?job= on load.
+  useEffect(() => {
+    const q = params.get("job");
+    if (q) setSelected(q);
+  }, [params]);
+
+  useEffect(() => {
+    let alive = true;
+    setLoading(true);
+    fetch(`/api/cv?id=${encodeURIComponent(selected)}`)
+      .then((r) => r.text())
+      .then((t) => alive && setMarkdown(t))
+      .catch(() => alive && setMarkdown("_Couldn't load this CV._"))
+      .finally(() => alive && setLoading(false));
+    return () => {
+      alive = false;
+    };
+  }, [selected]);
+
+  const selectedJob = tailored.find((j) => j.id === selected);
+
+  return (
+    <div className="mx-auto w-full max-w-6xl px-4 py-8">
+      <PageHeader
+        title="Resumes"
+        subtitle="Your base CV, plus a version Claude tailored to each strong match, ATS-tuned and never fabricated."
+      />
+
+      <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-6">
+        <div className="space-y-2">
+          <SelectButton
+            active={selected === "base"}
+            onClick={() => setSelected("base")}
+          >
+            <FileText className="size-4 shrink-0"

@@ -1,0 +1,446 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+@custom-variant dusk (&:is(.dusk *));
+
+/* ============================================================
+   Sunlit Study — DAY tokens
+   ============================================================ */
+:root {
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+
+  --destructive: oklch(0.577 0.245 27.325);
+
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+
+  --radius: 0.625rem;
+
+  /* Palette extras */
+  --rose: #e6a8a0;
+  --sage: #9cb58a;
+  --sage-ink: #5f7a4e;
+  --sky: #8fb8d6;
+  --warm-glow: #f5d9a8;
+
+  /* Grade scale */
+  --grade-a: #6fae84;
+  --grade-b: #8fbb73;
+  --grade-c: #d7b766;
+  --grade-d: #dca06a;
+  --grade-e: #d68f7e;
+  --grade-f: #c47e7e;
+
+  /* Scene */
+  --sky-top: #b6dcf0;
+  --sky-bottom: #ecf4f0;
+  --sun: #f7e6b8;
+
+  /* Sidebar */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+
+  /* Shadows */
+  --shadow-soft: 0 2px 8px rgba(122, 102, 70, 0.08), 0 14px 34px rgba(150, 122, 80, 0.1);
+  --shadow-card: 0 1px 2px rgba(122, 102, 70, 0.05), 0 10px 26px rgba(150, 122, 80, 0.09);
+
+  /* Glass */
+  --glass-bg: rgba(255, 253, 247, 0.62);
+  --glass-border: rgba(255, 255, 255, 0.55);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+/* ============================================================
+   DUSK — cooler blue-grey overrides for the day/dusk toggle
+   ============================================================ */
+.dusk {
+  --background: #e9edf2;
+  --foreground: #3c4350;
+
+  --card: #f6f8fb;
+  --card-foreground: #3c4350;
+  --popover: #f6f8fb;
+  --popover-foreground: #3c4350;
+
+  --primary: #87b3d8;
+  --primary-foreground: #ffffff;
+
+  --secondary: #dde4ec;
+  --secondary-foreground: #454e5c;
+
+  --muted: #dde4ec;
+  --muted-foreground: #77808f;
+
+  --accent: #93b0a4;
+  --accent-foreground: #223028;
+
+  --destructive: #c98f92;
+
+  --border: #cdd6e0;
+  --input: #cdd6e0;
+  --ring: #94bcdd;
+
+  --rose: #d69fa2;
+  --sage: #93b0a4;
+  --sage-ink: #55705f;
+  --sky: #94bcdd;
+  --warm-glow: #e7d4b4;
+
+  --grade-a: #6ba98a;
+  --grade-b: #86b47f;
+  --grade-c: #cdae6c;
+  --grade-d: #cf9a72;
+  --grade-e: #cc8b86;
+  --grade-f: #bd8085;
+
+  --sky-top: #aec8e0;
+  --sky-bottom: #dde6ec;
+  --sun: #e9dcb6;
+
+  --sidebar: #f2f5f9;
+  --sidebar-border: #d3dce5;
+
+  --shadow-soft: 0 2px 8px rgba(60, 72, 92, 0.1), 0 14px 34px rgba(70, 84, 110, 0.12);
+  --shadow-card: 0 1px 2px rgba(60, 72, 92, 0.06), 0 10px 26px rgba(70, 84, 110, 0.11);
+
+  --glass-bg: rgba(246, 248, 251, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.45);
+}
+
+/* ============================================================
+   Theme mapping — expose tokens to Tailwind v4 utilities
+   ============================================================ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-rose: var(--rose);
+  --color-sage: var(--sage);
+  --color-sage-ink: var(--sage-ink);
+  --color-sky: var(--sky);
+  --color-warm-glow: var(--warm-glow);
+
+  --color-grade-a: var(--grade-a);
+  --color-grade-b: var(--grade-b);
+  --color-grade-c: var(--grade-c);
+  --color-grade-d: var(--grade-d);
+  --color-grade-e: var(--grade-e);
+  --color-grade-f: var(--grade-f);
+
+  --color-sky-top: var(--sky-top);
+  --color-sky-bottom: var(--sky-bottom);
+  --color-sun: var(--sun);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-border: var(--sidebar-border);
+
+  /* Fonts (variables come from next/font in layout.tsx) */
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-hand: var(--font-hand);
+
+  /* Radius scale off --radius (1.2rem) */
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.25);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-3xl: calc(var(--radius) * 2.1);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Shadows */
+  --shadow-soft: var(--shadow-soft);
+  --shadow-card: var(--shadow-card);
+
+  /* Animations */
+  --animate-breathe: fjh-breathe 4.5s ease-in-out infinite;
+  --animate-blink: fjh-blink 5.5s ease-in-out infinite;
+  --animate-tail: fjh-tail 3.8s ease-in-out infinite;
+  --animate-ear: fjh-ear 6s ease-in-out infinite;
+  --animate-cloud: fjh-cloud 40s linear infinite;
+  --animate-mote: fjh-mote 9s ease-in-out infinite;
+  --animate-float: fjh-float 6s ease-in-out infinite;
+  --animate-sun: fjh-sun 12s ease-in-out infinite;
+  --animate-wave: fjh-wave 3s ease-in-out infinite;
+  --animate-rise: fjh-rise 0.6s ease-out both;
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+}
+
+/* ============================================================
+   Base layer
+   ============================================================ */
+@layer base {
+  * {
+    border-color: var(--color-border);
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    @apply bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), ui-rounded, system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* ============================================================
+   Components
+   ============================================================ */
+@layer components {
+  .glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass-strong {
+    background: color-mix(in srgb, var(--card) 86%, transparent);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-card);
+  }
+}
+
+/* ============================================================
+   Utilities
+   ============================================================ */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .cozy-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+  }
+  .cozy-scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .cozy-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .cozy-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--color-border);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  .cozy-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-muted-foreground);
+    background-clip: content-box;
+  }
+}
+
+/* ============================================================
+   Keyframes — gentle motion for the cat & the scene
+   ============================================================ */
+@keyframes fjh-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.025); }
+}
+
+@keyframes fjh-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+@keyframes fjh-tail {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes fjh-ear {
+  0%, 90%, 100% { transform: rotate(0deg); }
+  94% { transform: rotate(-6deg); }
+}
+
+@keyframes fjh-cloud {
+  from { transform: translateX(-8%); }
+  to { transform: translateX(108%); }
+}
+
+@keyframes fjh-mote {
+  0% { transform: translate(0, 0); opacity: 0.35; }
+  50% { transform: translate(6px, -10px); opacity: 0.8; }
+  100% { transform: translate(0, 0); opacity: 0.35; }
+}
+
+@keyframes fjh-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes fjh-sun {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+
+@keyframes fjh-wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(12deg); }
+  75% { transform: rotate(-8deg); }
+}
+
+@keyframes fjh-rise {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ============================================================
+   Reduced motion — nearly disable everything
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.dark {
+
+  --background: oklch(0.145 0 0);
+
+  --foreground: oklch(0.985 0 0);
+
+  --card: oklch(0.205 0 0);
+
+  --card-foreground: oklch(0.985 0 0);
+
+  --popover: oklch(0.205 0 0);
+
+  --popover-foreground: oklch(0.985 0 0);
+
+  --primary: oklch(0.922 0 0);
+
+  --primary-foreground: oklch(0.205 0 0);
+
+  --secondary: oklch(0.269 0 0);
+
+  --secondary-foreground: oklch(0.985 0 0);
+
+  --muted: oklch(0.269 0 0);
+
+  --muted-foreground: oklch(0.708 0 0);
+
+  --accent: oklch(0.269 0 0);
+
+  --accent-foreground: oklch(0.985 0 0);
+
+  --destructive: oklch(0.704 0.191 22.216);
+
+  --border: oklch(1 0 0 / 10%);
+
+  --input: oklch(1 0 0 / 15%);
+
+  --ring: oklch(0.556 0 0);
+
+  --chart-1: oklch(0.87 0 0);
+
+  --chart-2: oklch(0.556 0 0);
+
+  --chart-3: oklch(0.439 0 0);
+
+  --chart-4: oklch(0.371 0 0);
+
+  --chart-5: oklch(0.269 0 0);
+
+  --sidebar: oklch(0.205 0 0);
+
+  --sidebar-foreground: oklch(0.985 0 0);
+
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+
+  --sidebar-accent: oklch(0.269 0 0);
+
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+
+  --sidebar-border: oklch(1 0 0 / 10%);
+
+  --sidebar-ring: oklch(0.556 0 0);
+}

@@ -1,0 +1,17 @@
+{
+  "fullName": "Your Name",
+  "email": "you@example.com",
+  "location": "Remote / Worldwide",
+  "headline": "Senior Software Engineer",
+  "targetRoles": [
+    "AI Engineer",
+    "Solutions Architect",
+    "Automation Engineer"
+  ],
+  "salaryFloor": 150000,
+  "targetMax": 300000,
+  "workAuthorized": true,
+  "requiresSponsorship": false,
+  "isDemo": true,
+  "onboarded": true
+}

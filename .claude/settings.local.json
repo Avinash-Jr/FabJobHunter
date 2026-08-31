@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npm run *)",
+      "PowerShell(Set-Content *)",
+      "PowerShell(Select-String *)",
+      "PowerShell(Out-File *)",
+      "PowerShell(Write-Output '# Implementation Plan' > C:\\\\Users\\\\avijr\\\\.claude\\\\plans\\\\keep-working-on-the-rippling-meteor.md)"
+    ]
+  }
+}

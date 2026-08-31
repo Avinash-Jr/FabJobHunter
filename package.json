@@ -1,0 +1,15 @@
+{
+  "name": "fabjobhunter-engine",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cycle": "node engine/cycle.mjs --force",
+    "apply": "node engine/apply.mjs",
+    "seed": "node engine/seed.mjs"
+  },
+  "dependencies": {
+    "marked": "^14.1.4",
+    "nodemailer": "^9.0.6",
+    "playwright": "1.58.1"
+  }
+}

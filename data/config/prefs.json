@@ -1,0 +1,14 @@
+{
+  "autonomy": true,
+  "autoHunt": true,
+  "autoSubmit": true,
+  "liveApply": false,
+  "liveSubmit": false,
+  "autoSubmitMinScore": 4,
+  "minAutoScore": 4,
+  "dailyCap": 10,
+  "perCap": 2,
+  "companyCap": 2,
+  "scanIntervalMin": 30,
+  "scanInterval": 30
+}

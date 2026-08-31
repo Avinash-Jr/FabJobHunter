@@ -1,0 +1,8 @@
+{
+  "autoHunt": true,
+  "liveSubmit": false,
+  "minAutoScore": 4,
+  "dailyCap": 10,
+  "companyCap": 2,
+  "scanInterval": 30
+}

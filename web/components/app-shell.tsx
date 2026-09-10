@@ -86,7 +86,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               <Mascot />
             </div>
              <div>
-               <h2 className="font-display font-medium text-sm leading-tight text-foreground/90">@FabRichhhhhh</h2>
+               <h2 className="font-display font-medium text-sm leading-tight text-foreground/90">@FabJobHunter</h2>
                <p className="text-xs text-muted-foreground">Job Hunter Bot</p>
              </div>
           </div>

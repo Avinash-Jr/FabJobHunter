@@ -1,1 +1,101 @@
-[]
+[
+  {
+    "id": "run_mth68c8g",
+    "startedAt": 1788176689648,
+    "endedAt": 1788176782414,
+    "boardsScanned": 98,
+    "newJobs": 238,
+    "scored": 238,
+    "cvsGenerated": 0,
+    "applied": 172,
+    "parked": 0
+  },
+  {
+    "id": "run_mth6qtic",
+    "startedAt": 1788177551844,
+    "endedAt": 1788177662506,
+    "boardsScanned": 98,
+    "newJobs": 0,
+    "scored": 0,
+    "cvsGenerated": 8,
+    "applied": 172,
+    "parked": 0
+  },
+  {
+    "id": "run_mth741tu",
+    "startedAt": 1788178169154,
+    "endedAt": 1788178242403,
+    "boardsScanned": 98,
+    "newJobs": 0,
+    "scored": 0,
+    "cvsGenerated": 16,
+    "applied": 172,
+    "parked": 0
+  },
+  {
+    "id": "run_mth7xc59",
+    "startedAt": 1788179535549,
+    "endedAt": 1788179604928,
+    "boardsScanned": 98,
+    "newJobs": 1,
+    "scored": 1,
+    "cvsGenerated": 24,
+    "applied": 173,
+    "parked": 0
+  },
+  {
+    "id": "run_mth86mns",
+    "startedAt": 1788179969080,
+    "endedAt": 1788180046613,
+    "boardsScanned": 98,
+    "newJobs": 1,
+    "scored": 1,
+    "cvsGenerated": 32,
+    "applied": 174,
+    "parked": 0
+  },
+  {
+    "id": "run_mth8kq2s",
+    "startedAt": 1788180626692,
+    "endedAt": 1788180712160,
+    "boardsScanned": 98,
+    "newJobs": 0,
+    "scored": 0,
+    "cvsGenerated": 40,
+    "applied": 174,
+    "parked": 0
+  },
+  {
+    "id": "run_mth94aib",
+    "startedAt": 1788181539635,
+    "endedAt": 1788181610627,
+    "boardsScanned": 98,
+    "newJobs": 0,
+    "scored": 136,
+    "cvsGenerated": 48,
+    "applied": 174,
+    "parked": 0
+  },
+  {
+    "id": "run_mtv44qeg",
+    "startedAt": 1789019688616,
+    "endedAt": 1789019756073,
+    "boardsScanned": 98,
+    "newJobs": 44,
+    "scored": 44,
+    "cvsGenerated": 56,
+    "applied": 174,
+    "parked": 0
+  },
+  {
+    "id": "run_mtv45ubp",
+    "startedAt": 1789019740357,
+    "endedAt": 1789019798301,
+    "boardsScanned": 98,
+    "newJobs": 44,
+    "scored": 44,
+    "cvsGenerated": 56,
+    "applied": 174,
+    "parked": 0
+  }
+]

@@ -1,10 +1,10 @@
 {
-  "fullName": "Your Name",
-  "email": "you@example.com",
+  "fullName": "Avinash Kumar",
+  "email": "avijr272@gmail.com",
   "location": "Remote / Worldwide",
   "headline": "Software Engineer",
   "targetRoles": [
-    "AI Engineer",
+    "AI Full Stack Engineer",
     "Backend Engineer",
     "Software Engineer"
   ],
@@ -12,6 +12,7 @@
   "targetMax": 300000,
   "workAuthorized": true,
   "requiresSponsorship": false,
-  "isDemo": true,
-  "onboarded": true
+  "isDemo": false,
+  "onboarded": true,
+  "updatedAt": 1788176861060
 }

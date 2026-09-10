@@ -1,4 +1,4 @@
-import { pathToFileURL } from "node:url";
+﻿import { pathToFileURL } from "node:url";
 import { P, readJson, getJobs, saveJobs, appendActivity } from "./lib.mjs";
 import { makeHttpCtx } from "./providers/_http.mjs";
 import greenhouse from "./providers/greenhouse.mjs";
@@ -7,11 +7,7 @@ import ashby from "./providers/ashby.mjs";
 import workable from "./providers/workable.mjs";
 const PROVIDERS = { greenhouse, lever, ashby, workable };
 const ctx = makeHttpCtx();
-const DEFAULT_POS = [
-  "ai","ml","llm","agent","engineer","developer","product","data","platform","solutions",
-  "automation","architect","analyst","manager","scientist","research","founding","deployed",
-  "developer advocate","growth","marketing","content","seo","social","operations","business","strategy","designer",
-];
+const DEFAULT_POS = [ "software engineer", "sde", "software development engineer", "backend", "back-end", "back end", "fullstack", "full-stack", "full stack" ];
 const NEG = ["intern ","internship","co-op","apprentice"];
 function keywords(profile) {
   const fromRoles = (profile.targetRoles || []).join(" ").toLowerCase().split(/[^a-z0-9+]+/).filter((w) => w.length > 2);

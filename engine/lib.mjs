@@ -1,4 +1,4 @@
-import fs from "node:fs/promises";
+﻿import fs from "node:fs/promises";
 import path from "node:path";
 
 export const DATA = path.resolve(import.meta.dirname, "..", "data");
@@ -52,3 +52,5 @@ export async function updateJob(id, patch) {
   await saveJobs(next);
   return next.find((j) => j.id === id);
 }
+
+

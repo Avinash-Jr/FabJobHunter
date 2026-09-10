@@ -87,7 +87,7 @@ export default function DashboardPage() {
             Welcome back, {firstName}
           </h1>
           <p className="text-lg opacity-90 max-w-2xl">
-            Claude is hunting across {activeCompanies} companies for you. {applied.length} applications sent
+            Claude is hunting across {activeCompanies} companies for you. {applied.length} applications sent so far
             {parked.length > 0 && (
               <span className="text-[color:var(--rose)] font-medium">
                 , {parked.length} waiting for your tap
@@ -109,7 +109,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Stats Row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <StatCard 
           icon={<Radar className="size-5" style={{ color: "var(--sky)" }} />}
           title="Jobs scanned today"
@@ -119,10 +119,17 @@ export default function DashboardPage() {
         />
         <StatCard 
           icon={<Send className="size-5" style={{ color: "var(--grade-b)" }} />}
-          title="Applications sent"
+          title="Total Applications"
           value={applied.length}
-          hint={parked.length > 0 ? `${parked.length} need your tap` : "All caught up"}
+          hint="Sent all-time"
           accent="var(--grade-b)"
+        />
+        <StatCard 
+          icon={<Send className="size-5" style={{ color: "var(--sage)" }} />}
+          title="Applications Today"
+          value={applied.filter(j => j.appliedAt && j.appliedAt > Date.now() - 86400000).length}
+          hint={parked.length > 0 ? `${parked.length} need your tap` : "All caught up"}
+          accent="var(--sage)"
         />
         <StatCard 
           icon={<CalendarCheck className="size-5" style={{ color: "var(--grade-a)" }} />}

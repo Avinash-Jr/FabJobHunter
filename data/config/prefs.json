@@ -1,14 +1,20 @@
 {
   "autonomy": true,
-  "autoHunt": true,
   "autoSubmit": true,
   "liveApply": false,
-  "liveSubmit": false,
   "autoSubmitMinScore": 4,
-  "minAutoScore": 4,
-  "dailyCap": 10,
+  "dailyCap": 12,
   "perCap": 2,
-  "companyCap": 2,
   "scanIntervalMin": 30,
+  "workingHours": {
+    "start": 9,
+    "end": 19
+  },
+  "theme": "day",
+  "blockedCompanies": [],
+  "autoHunt": false,
+  "liveSubmit": false,
+  "minAutoScore": 4,
+  "companyCap": 2,
   "scanInterval": 30
 }

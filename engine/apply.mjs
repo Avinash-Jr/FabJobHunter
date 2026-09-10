@@ -1,9 +1,9 @@
-import { pathToFileURL } from "node:url";
-import { P, readJson, appendActivity } from "./lib.mjs";
+﻿import { pathToFileURL } from "node:url";
+import { P, readJson, getJobs, updateJob, appendActivity } from "./lib.mjs";
 
 export async function apply({ live = false } = {}) {
   const prefs = await readJson(P.prefs, { autonomy: false, liveApply: false });
-  const jobs = await readJson(P.jobs, []);
+  const jobs = await getJobs();
   const pending = jobs.filter((j) => j.status === "cv_ready" && !j.parked);
 
   await appendActivity({

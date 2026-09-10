@@ -1,4 +1,4 @@
-import { pathToFileURL } from "node:url";
+﻿import { pathToFileURL } from "node:url";
 import path from "node:path";
 import { spawn } from "node:child_process";
 import { P, readJson, addRun, appendActivity, getJobs } from "./lib.mjs";
@@ -17,7 +17,7 @@ export async function cycle({ force = false } = {}) {
   const s = await scan();
   const sc = await score();
   const profile = await readJson(P.profile, {});
-  if (prefs.autonomy && !profile.isDemo) {
+  if (prefs.autonomy) {
     try { await tailorAuto(8); } catch { /* tailoring is best-effort */ }
   }
   const jobs = await getJobs();
@@ -26,8 +26,8 @@ export async function cycle({ force = false } = {}) {
   const parked = jobs.filter((j) => j.status === "needs_you").length;
   const run = { id: `run_${startedAt.toString(36)}`, startedAt, endedAt: Date.now(), boardsScanned: s.boards, newJobs: s.added, scored: sc.scored, cvsGenerated: cvs, applied, parked };
   await addRun(run);
-  await appendActivity({ phase: "system", level: "success", msg: `Cycle done · ${s.added} new · ${sc.scored} scored` });
-  if (prefs.autonomy && prefs.autoSubmit && !profile.isDemo) {
+  await appendActivity({ phase: "system", level: "success", msg: `Cycle done Â· ${s.added} new Â· ${sc.scored} scored` });
+  if (prefs.autonomy && prefs.autoSubmit) {
     try {
       const applyScript = path.join(import.meta.dirname, "apply.mjs");
       const args = prefs.liveApply ? ["--live"] : [];
